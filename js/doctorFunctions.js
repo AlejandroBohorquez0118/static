@@ -1,5 +1,6 @@
 var idCarga; // Guarda el Id del elemento cuando se da click en el botón cargar
 
+
 function editarDoctor(){
 
     var elemento={
@@ -15,15 +16,11 @@ function editarDoctor(){
     $.ajax({    
 
         dataType : 'JSON',
-       
         data: dataToSend,
-        
         url: 'http://localhost:1010/api/Doctor/update',
-        
         type: 'PUT',
         contentType:'application/json',
-        
-        
+      
         success : function(json, textStatus, xhr) {
          
                 console.log(json);
@@ -52,7 +49,6 @@ function eliminarDoctor(idElemento){
        
         data : dataToSend,
         
-       
         url : "http://localhost:1010/api/Doctor/"+idElemento,
         type: 'DELETE',
         contentType:'application/json',
@@ -69,7 +65,6 @@ function eliminarDoctor(idElemento){
         }
     });
 }
-
 
 function cargarDoctor(idItem){
     $.ajax({    
@@ -168,6 +163,7 @@ function limpiarFormularioDoctor(){
     $("#descriptionDoctor").val("");
     $("#specialtyDoctor").val("");
 }
+
 $(document).ready(function(){
     consultarDoctorIC();
     consultarDoctorI();
@@ -203,3 +199,4 @@ function consultarDoctorIC(){
         console.log('Especialidad select -> '+first_select);
         window.doctorI=first_select; 
      }
+

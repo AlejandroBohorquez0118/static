@@ -116,8 +116,8 @@ function pintarRespuestaAdmin(respuesta){
                     <a href="${respuesta[i].email}" class="card-link">${respuesta[i].email}</a>
                     <!-- p class="card-text">${respuesta[i].password}</p -->
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminar(${respuesta[i].idAdmin})">Borrar</button>
-                        <button class="btn btn-success" onclick="cargar(${respuesta[i].idAdmin})">Cargar</button>
+                        <button class="btn btn-success" onclick="eliminarAdmin(${respuesta[i].idAdmin})">Borrar</button>
+                        <button class="btn btn-success" onclick="cargarAdmin(${respuesta[i].idAdmin})">Cargar</button>
                     </div>
                 </div>
             </div>`;   

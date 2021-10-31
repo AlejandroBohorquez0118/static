@@ -9,7 +9,6 @@ function editarClient(){
         email:$("#emailClient").val(),
         age:$("#ageClient").val(),
         password:$("#passwordClient").val()
-          
     };
     
     var dataToSend=JSON.stringify(elemento);
@@ -162,7 +161,6 @@ function guardarClient(){
         }
     });
 }
-
 function limpiarFormularioClient(){
     $("#nameClient").val("");
     $("#emailClient").val("");
