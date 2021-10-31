@@ -79,10 +79,10 @@ function cargarAdmin(idItem){
                 console.log(json);
 
                 var misItems=json.items;
-  
-          $("#nameAdmin").val(json.name);
-          $("#emailAdmin").val(json.email);
-          $("#passwordAdmin").val(json.password);
+            nameAdmin.value=json.name
+            emailAdmin.value=json.email
+            passwordAdmin.value=json.password
+          
           idCarga = idItem;
           console.log("idCarga es " +idCarga);
           
@@ -116,8 +116,8 @@ function pintarRespuestaAdmin(respuesta){
                     <a href="${respuesta[i].email}" class="card-link">${respuesta[i].email}</a>
                     <!-- p class="card-text">${respuesta[i].password}</p -->
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminarAdmin(${respuesta[i].idAdmin})">Borrar</button>
-                        <button class="btn btn-success" onclick="cargarAdmin(${respuesta[i].idAdmin})">Cargar</button>
+                        <button class="btn btn-danger" onclick="eliminarAdmin(${respuesta[i].idAdmin})">Borrar</button>
+                        <button class="btn btn-info" onclick="cargarAdmin(${respuesta[i].idAdmin})">Cargar</button>
                     </div>
                 </div>
             </div>`;   

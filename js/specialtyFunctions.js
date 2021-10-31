@@ -5,8 +5,8 @@ function editar(){
 
     var elemento={
         "id": idCarga,
-        "name":$("#nameSpecialty").val(),
-        "description":$("#descriptionSpecialty").val()
+        "name":$("#name").val(),
+        "description":$("#description").val()
     };
     
     var dataToSend=JSON.stringify(elemento);
@@ -30,14 +30,14 @@ function editar(){
         
         complete : function(xhr, status) {
             //alert('Petición realizada '+xhr.status);
-            limpiarFormularioSpecialty();
-            consultarSpecialty();
+            limpiarFormulario();
+            consultar();
             idCarga=null;
         }
     });
 }
 
-function eliminarSpecialty(idElemento){
+function eliminar(idElemento){
     var elemento={
         "id":idElemento
       };
@@ -63,14 +63,14 @@ function eliminarSpecialty(idElemento){
         complete : function(xhr, status) {
            //lert('Petición realizada '+xhr.status);
             //limpiarFormulario();
-            consultarSpecialty();
+            consultar();
         }
     });
 }
+
 function cargar(idItem){
     $.ajax({    
         url : "http://localhost:1010/api/Specialty/"+idItem,
-
         type : 'GET',
         dataType : 'json',        
         
@@ -78,8 +78,8 @@ function cargar(idItem){
                 console.log(json);
 
   
-          $("#nameSpecialty").val(json.name);
-          $("#descriptionSpecialty").val(json.description);
+          $("#name").val(json.name);
+          $("#description").val(json.description);
           idCarga = idItem;
           console.log("idCarga es " +idCarga);
 
@@ -96,7 +96,7 @@ function consultar(){
         datatype:"JSON",
         success:function(respuesta){
             console.log(respuesta);
-            pintarRespuestaSpecialty(respuesta);
+            pintarRespuesta(respuesta);
         }
     });
 }
@@ -112,7 +112,6 @@ function pintarRespuesta(respuesta){
     
     
     let myTable=`<div class="container" style="width: 100%;"><div class="row" >`;
-
     for(i=0; i<respuesta.length; i++) {
         myTable+=`
             <div class="card m-2" style="width: 20rem;">
@@ -120,8 +119,8 @@ function pintarRespuesta(respuesta){
                     <h5 class="card-title">${respuesta[i].name}</h5>
                     <p>${respuesta[i].description}</p>
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminar(${respuesta[i].id})">Borrar</button>
-                        <button class="btn btn-success" onclick="cargar(${respuesta[i].id})">Cargar</button>
+                        <button class="btn btn-danger" onclick="eliminar(${respuesta[i].id})">Borrar</button>
+                        <button class="btn btn-info" onclick="cargar(${respuesta[i].id})">Cargar</button>
                     </div>
                 </div>
             </div>`;   
@@ -131,22 +130,23 @@ function pintarRespuesta(respuesta){
     $("#resultados").html(myTable);
 }
 
-function guardarSpecialty(){
+function guardar(){
     let var2 = {
-        name:$("#nameSpecialty").val(),
-        description:$("#descriptionSpecialty").val()
+        name:$("#name").val(),
+        description:$("#description").val()
     };
     $.ajax({
         type:'POST',
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
+        url:"http://localhost:1010/api/Specialty/save",
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
             //window.location.reload();
-            //limpiarFormularioSpecialty();
-            consultarSpecialty();
+            limpiarFormulario();
+            consultar();
         },
         error:function(jqXHR, textStatus, errorTrown){
             //window.location.reload();

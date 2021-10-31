@@ -9,6 +9,7 @@ function editarClient(){
         email:$("#emailClient").val(),
         age:$("#ageClient").val(),
         password:$("#passwordClient").val()
+          
     };
     
     var dataToSend=JSON.stringify(elemento);
@@ -120,10 +121,10 @@ function pintarRespuestaClient(respuesta){
                 <div class="card-body">
                     <h5 class="card-title">${respuesta[i].name}</h5>
                     <a href="${respuesta[i].email}" class="card-link">${respuesta[i].email}</a>
-                    <!-- p class="card-text">${respuesta[i].age}</p -->
+                    <p class="card-text">${respuesta[i].age}</p>
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminar(${respuesta[i].idClient})">Borrar</button>
-                        <button class="btn btn-success" onclick="cargar(${respuesta[i].idClient})">Cargar</button>
+                        <button class="btn btn-danger" onclick="eliminarClient(${respuesta[i].idClient})">Borrar</button>
+                        <button class="btn btn-info" onclick="cargarClient(${respuesta[i].idClient})">Cargar</button>
                     </div>
                 </div>
             </div>`;   
@@ -155,12 +156,13 @@ function guardarClient(){
             consultarClient();
         },
         error:function(jqXHR, textStatus, errorTrown){
-            window.location.reload();
+            //window.location.reload();
             console.log("No se guardó");
             alert("No se guardó correctamente");
         }
     });
 }
+
 function limpiarFormularioClient(){
     $("#nameClient").val("");
     $("#emailClient").val("");

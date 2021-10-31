@@ -1,6 +1,5 @@
 var idCarga; // Guarda el Id del elemento cuando se da click en el botón cargar
 
-
 function editarDoctor(){
 
     var elemento={
@@ -16,11 +15,15 @@ function editarDoctor(){
     $.ajax({    
 
         dataType : 'JSON',
+       
         data: dataToSend,
+        
         url: 'http://localhost:1010/api/Doctor/update',
+        
         type: 'PUT',
         contentType:'application/json',
-      
+        
+        
         success : function(json, textStatus, xhr) {
          
                 console.log(json);
@@ -49,6 +52,7 @@ function eliminarDoctor(idElemento){
        
         data : dataToSend,
         
+       
         url : "http://localhost:1010/api/Doctor/"+idElemento,
         type: 'DELETE',
         contentType:'application/json',
@@ -66,6 +70,7 @@ function eliminarDoctor(idElemento){
     });
 }
 
+
 function cargarDoctor(idItem){
     $.ajax({    
         url : "http://localhost:1010/api/Doctor/"+idItem,
@@ -79,7 +84,7 @@ function cargarDoctor(idItem){
           $("#departmentDoctor").val(json.department);
           $("#yearDoctor").val(json.year);
           $("#descriptionDoctor").val(json.description);
-          $("#specialtyDoctor").val(json.specialty.id);
+          
           idCarga = idItem;
           console.log("idCarga es " +idCarga);
         }
@@ -115,8 +120,8 @@ function pintarRespuestaDoctor(respuesta){
                     <p class="card-text">${respuesta[i].specialty.name}</p>
                     
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminar(${respuesta[i].idClient})">Borrar</button>
-                        <button class="btn btn-success" onclick="cargar(${respuesta[i].idClient})">Cargar</button>
+                        <button class="btn btn-danger" onclick="eliminarDoctor(${respuesta[i].id})">Borrar</button>
+                        <button class="btn btn-info" onclick="cargarDoctor(${respuesta[i].id})">Cargar</button>
                     </div>
                 </div>
             </div>`;   
@@ -149,7 +154,7 @@ function guardarDoctor(){
             consultarDoctorI();
         },
         error:function(jqXHR, textStatus, errorTrown){
-            window.location.reload();
+            //window.location.reload();
             console.log("No se guardó");
             alert("No se guardó correctamente");
         }
@@ -163,7 +168,6 @@ function limpiarFormularioDoctor(){
     $("#descriptionDoctor").val("");
     $("#specialtyDoctor").val("");
 }
-
 $(document).ready(function(){
     consultarDoctorIC();
     consultarDoctorI();
@@ -199,4 +203,3 @@ function consultarDoctorIC(){
         console.log('Especialidad select -> '+first_select);
         window.doctorI=first_select; 
      }
-

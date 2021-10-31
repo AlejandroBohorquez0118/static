@@ -1,7 +1,6 @@
 var idCarga; // Guarda el Id del elemento cuando se da click en el botón cargar
 
 
-
 function editarMessage(){
 
     var elemento={
@@ -18,7 +17,7 @@ function editarMessage(){
        
         data: dataToSend,
         
-        url: 'http://localhost:8080/api/Message/update',
+        url: 'http://localhost:1010/api/Message/update',
         
         type: 'PUT',
         contentType:'application/json',
@@ -53,7 +52,7 @@ function eliminarMessage(idElemento){
         data : dataToSend,
         
        
-        url : "http://localhost:8080/api/Message/"+idElemento,
+        url : "http://localhost:1010/api/Message/"+idElemento,
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -70,10 +69,9 @@ function eliminarMessage(idElemento){
     });
 }
 
-
 function cargarMessage(idItem){
     $.ajax({    
-        url : "http://localhost:8080/api/Message/"+idItem,
+        url : "http://localhost:1010/api/Message/"+idItem,
         type : 'GET',
         dataType : 'JSON',        
 
@@ -92,10 +90,9 @@ function cargarMessage(idItem){
 
 //////------------------
 
-
 function consultarMessage(){
     $.ajax({
-        url:"http://localhost:8080/api/Message/all",
+        url:"http://localhost:1010/api/Message/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -161,7 +158,7 @@ function guardarMessage(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
-        url:"http://localhost:8080/api/Message/save",
+        url:"http://localhost:1010/api/Message/save",
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -197,7 +194,7 @@ function consultarDatosMessage(){
 
 function consultarDoctorMessage(){
     $.ajax({
-        url:"http://localhost:8080/api/Doctor/all",
+        url:"http://localhost:1010/api/Doctor/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -228,13 +225,11 @@ function consultarDoctorMessage(){
         window.doctorMessage=first_select; 
      }
 
-
 //funcion consulta datos Clientes
-
 
 function consultarClienteMessage(){
     $.ajax({
-        url:"http://localhost:8080/api/Client/all",
+        url:"http://localhost:1010/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){

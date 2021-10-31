@@ -72,7 +72,7 @@ function cargarPagClient() {
     $("#contClient").load("http://localhost:1010/clientInterface.html", function (data) {
     console.log("se esta ejecutando cargarPagClient")
         $(this).html(data);
-        $("#contClient").width= 100;
+        $("#contAdmin").width= 100;
     })
 }
 
