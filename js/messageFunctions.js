@@ -113,8 +113,8 @@ function pintarRespuestaMessage(respuesta){
                     <p class="card-text">${respuesta[i].client.name}</p>
                     <p class="card-text">${respuesta[i].messageText}</p>
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminarMessage(${respuesta[i].idMessage})">Borrar</button>
-                        <button class="btn btn-success" onclick="cargarMessage(${respuesta[i].idMessage})">Cargar</button>
+                        <button class="btn btn-danger" onclick="eliminarMessage(${respuesta[i].idMessage})">Borrar</button>
+                        <button class="btn btn-info" onclick="cargarMessage(${respuesta[i].idMessage})">Cargar</button>
                     </div>
                 </div>
             </div>`;   

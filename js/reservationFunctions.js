@@ -247,9 +247,6 @@ function consultarReservation(){
 }
 
 function pintarRespuestaReservation(respuesta){
-    var o = 0;
-    
-    var a = new Array(respuesta.length);
     let myTable=`<div class="container" style="width: 100%;"><div class="row">`;
     for(i=0; i<respuesta.length; i++) {
         myTable+=`
@@ -270,39 +267,16 @@ function pintarRespuestaReservation(respuesta){
    }
  myTable+=`
  
- <select name= AccionBox id="AccionBox${respuesta[i].idReservation}" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">'
-
-
- <option value="0">Seleccione Accion</option>";
-
- <option value="1">Borrar reservacion</option>";
- <option value="2">Cargar reservacion</option>";
- <option value="3">Calificar reservacion</option>";
- <option value="4">Cargar Calificacion</option>";
- <option value="5">Borrar Calificacion</option>";
-
-</select>";
-<div align="centre">
-    <button class="btn btn-success" onclick="ActionCombo(${respuesta[i].idReservation})">Ejecutar Accion</button>
-</div>                    
-
-
-
-
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminarReservation(${respuesta[i].idReservation})">Borrar</button>
-                        <button class="btn btn-success" onclick="Calificar(${respuesta[i].idReservation})">Calificar</button>
-                        <button class="btn btn-success" onclick="CargarReservation(${respuesta[i].idReservation})">Cargar Reservacion</button>
-                        <button class="btn btn-success" onclick="conseguirScore(${respuesta[i].idReservation})">Borrar Score</button>
-                        <button class="btn btn-success" onclick="cargarScore(${respuesta[i].idReservation})">Cargar Score</button>
+                        <button class="btn btn-danger" onclick="eliminarReservation(${respuesta[i].idReservation})">Borrar Reservacion</button>
+                        <button class="btn btn-danger" onclick="conseguirScore(${respuesta[i].idReservation})">Borrar Score</button>
+                        <button class="btn btn-info" onclick="CargarReservation(${respuesta[i].idReservation})">Cargar Reservacion</button>
+                        <button class="btn btn-info" onclick="cargarScore(${respuesta[i].idReservation})">Cargar Score</button>
+                        <button class="btn btn-info" onclick="Calificar(${respuesta[i].idReservation})">Calificar</button>
                     </div>
                 </div>
             </div>`;   
-    console.log(o,respuesta[i].idReservation,a[o]);      
-    a[o] = respuesta[i].idReservation;
-    console.log(a[o])
     
-    o += 1;
         }
     myTable+=`</div></div>`;
 
