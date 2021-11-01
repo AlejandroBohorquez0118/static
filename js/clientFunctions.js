@@ -117,14 +117,14 @@ function pintarRespuestaClient(respuesta){
     let myTable=`<div class="container" style="width: 100%;"><div class="row">`;
     for(i=0; i<respuesta.length; i++) {
         myTable+=`
-            <div class="card m-2" style="width: 20rem;">
+            <div class="card m-2" style="width: 20rem;" id="Card">
                 <div class="card-body">
                     <h5 class="card-title">${respuesta[i].name}</h5>
                     <a href="${respuesta[i].email}" class="card-link">${respuesta[i].email}</a>
-                    <!-- p class="card-text">${respuesta[i].age}</p -->
+                    <p class="card-text">${respuesta[i].age}</p>
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminar(${respuesta[i].idClient})">Borrar</button>
-                        <button class="btn btn-success" onclick="cargar(${respuesta[i].idClient})">Cargar</button>
+                        <button class="btn btn-danger" onclick="eliminarClient(${respuesta[i].idClient})">Borrar</button>
+                        <button class="btn btn-info" onclick="cargarClient(${respuesta[i].idClient})">Cargar</button>
                     </div>
                 </div>
             </div>`;   
@@ -156,7 +156,7 @@ function guardarClient(){
             consultarClient();
         },
         error:function(jqXHR, textStatus, errorTrown){
-            window.location.reload();
+            //window.location.reload();
             console.log("No se guardó");
             alert("No se guardó correctamente");
         }

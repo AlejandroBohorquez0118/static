@@ -17,26 +17,42 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="js/indexFunctions.js"></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body> 
 
-        <div class ="container">
+        <div class ="container"><center>
 
-            <h1>Ciclo 3 Reto 4</h1>
+            <IMG SRC="logo.png"  id="logoBienvenida">
+        
+                <div class="container unauthenticated">
 
-        </div>
-        <div class="container unauthenticated">
-            Para iniciar sesion con Github:
-            <a href="/oauth2/authorization/github">haz click</a>
+                    <div class="card m-2" style="width: 40rem;" id="CardBienvenida">
+                        <div class="card-body">
+                            <h3 class="card-title"><b>Bienvenido</b></h3>
+                            <p>Para continuar por favor Inicia sesion con Github:</p>
+                            <div align="centre">
+                               <a class="btn btn-info" href="/oauth2/authorization/github" role="button">Click aqui</a>
+                            </div>
+                        </div>
+                    </div>           
+                 
+            </div>
+           
+            
+        </center>
 
+
+        
         </div>
         <div class="container authenticated" style="display:none">
 
 
-            <div class ="container">
+            <div class ="container" id="identificacion">
 
-                Autenticado como: <span id="user"></span>"
-                <h1>SERVICIOS</h1>
+               <b> Autenticado como: </b><span id="user"></span>"
+                <h1 id="Service"><b> SERVICIOS</b> </h1> 
+                
             </div>
 
 

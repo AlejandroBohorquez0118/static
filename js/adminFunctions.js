@@ -79,10 +79,10 @@ function cargarAdmin(idItem){
                 console.log(json);
 
                 var misItems=json.items;
-  
-          $("#nameAdmin").val(json.name);
-          $("#emailAdmin").val(json.email);
-          $("#passwordAdmin").val(json.password);
+            nameAdmin.value=json.name
+            emailAdmin.value=json.email
+            passwordAdmin.value=json.password
+          
           idCarga = idItem;
           console.log("idCarga es " +idCarga);
           
@@ -110,14 +110,14 @@ function pintarRespuestaAdmin(respuesta){
     let myTable=`<div class="container" style="width: 100%;"><div class="row" >`;
     for(i=0; i<respuesta.length; i++) {
         myTable+=`
-            <div class="card m-2" style="width: 20rem;">
+            <div class="card m-2" style="width: 20rem;" id="Card">
                 <div class="card-body">
                     <h5 class="card-title">${respuesta[i].name}</h5>
                     <a href="${respuesta[i].email}" class="card-link">${respuesta[i].email}</a>
                     <!-- p class="card-text">${respuesta[i].password}</p -->
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminar(${respuesta[i].idAdmin})">Borrar</button>
-                        <button class="btn btn-success" onclick="cargar(${respuesta[i].idAdmin})">Cargar</button>
+                        <button class="btn btn-danger" onclick="eliminarAdmin(${respuesta[i].idAdmin})">Borrar</button>
+                        <button class="btn btn-info" onclick="cargarAdmin(${respuesta[i].idAdmin})">Cargar</button>
                     </div>
                 </div>
             </div>`;   
@@ -125,27 +125,7 @@ function pintarRespuestaAdmin(respuesta){
     }
     myTable+=`</div></div></div>`;
     $("#resultadosAdmin").html(myTable);
-    
-    /**let myTable="<table border='1'>";
-
-    myTable+="<thead>";
-    myTable+="<TR>";
-    myTable+="<th>"+"Nombre"+"</th>";
-    myTable+="<th>"+"Email"+"</th>";
-    myTable+="<th>"+"Contraseña"+"</th>";
-    myTable+="</TR>";
-    myTable+="</thead>";
-    for(i=0; i<respuesta.length; i++) {
-        myTable+="<tr>";
-        myTable+="<td>"+respuesta[i].name+"</td>";
-        myTable+="<td>"+respuesta[i].email+"</td>";
-        myTable+="<td>"+respuesta[i].password+"</td>";
-        myTable+="<td><button onclick='eliminar("+respuesta[i].idAdmin+")'>Borrar</button></td>";
-        myTable+="<td><button onclick='cargar("+respuesta[i].idAdmin+")'>Cargar</button></td>";
-        myTable+="</tr>";
-    }
-    myTable+="</table>";
-    $("#resultados").html(myTable);**/
+  
 }
 
 function guardarAdmin(){

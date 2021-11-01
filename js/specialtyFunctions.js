@@ -114,13 +114,13 @@ function pintarRespuesta(respuesta){
     let myTable=`<div class="container" style="width: 100%;"><div class="row" >`;
     for(i=0; i<respuesta.length; i++) {
         myTable+=`
-            <div class="card m-2" style="width: 20rem;">
+            <div class="card m-2" style="width: 20rem;" id="Card">
                 <div class="card-body">
                     <h5 class="card-title">${respuesta[i].name}</h5>
                     <p>${respuesta[i].description}</p>
                     <div align="centre">
-                        <button class="btn btn-success" onclick="eliminar(${respuesta[i].id})">Borrar</button>
-                        <button class="btn btn-success" onclick="cargar(${respuesta[i].id})">Cargar</button>
+                        <button class="btn btn-danger" onclick="eliminar(${respuesta[i].id})">Borrar</button>
+                        <button class="btn btn-info" onclick="cargar(${respuesta[i].id})">Cargar</button>
                     </div>
                 </div>
             </div>`;   
