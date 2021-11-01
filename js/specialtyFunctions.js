@@ -1,6 +1,5 @@
 var idCarga; // Guarda el Id del elemento cuando se da click en el botón cargar
 
-
 function editar(){
 
     var elemento={
@@ -16,7 +15,7 @@ function editar(){
        
         data: dataToSend,
         
-        url: 'http://localhost:1010/api/Specialty/update',
+        url: 'http://129.151.116.109:1010/api/Specialty/update',
         
         type: 'PUT',
         contentType:'application/json',
@@ -51,7 +50,7 @@ function eliminar(idElemento){
         data : dataToSend,
         
        
-        url : "http://localhost:1010/api/Specialty/"+idElemento,
+        url : "http://129.151.116.109:1010/api/Specialty/"+idElemento,
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -70,7 +69,7 @@ function eliminar(idElemento){
 
 function cargar(idItem){
     $.ajax({    
-        url : "http://localhost:1010/api/Specialty/"+idItem,
+        url : "http://129.151.116.109:1010/api/Specialty/"+idItem,
         type : 'GET',
         dataType : 'json',        
         
@@ -91,7 +90,7 @@ function cargar(idItem){
 
 function consultar(){
     $.ajax({
-        url:"http://localhost:1010/api/Specialty/all",
+        url:"http://129.151.116.109:1010/api/Specialty/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -104,13 +103,6 @@ function consultar(){
 
 function pintarRespuesta(respuesta){
 
-    
-    
-    
-    
-    
-    
-    
     let myTable=`<div class="container" style="width: 100%;"><div class="row" >`;
     for(i=0; i<respuesta.length; i++) {
         myTable+=`
@@ -140,7 +132,7 @@ function guardar(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
-        url:"http://localhost:1010/api/Specialty/save",
+        url:"http://129.151.116.109:1010/api/Specialty/save",
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -165,4 +157,5 @@ function limpiarFormulario(){
 $(document).ready(function(){
     consultar();
 });
+
 

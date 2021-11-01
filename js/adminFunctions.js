@@ -1,6 +1,5 @@
 var idCarga; // Guarda el Id del elemento cuando se da click en el botón cargar
 
-
 function editarAdmin(){
 
     var elemento={
@@ -17,7 +16,7 @@ function editarAdmin(){
        
         data: dataToSend,
         
-        url: 'http://localhost:1010/api/Admin/update',
+        url: 'http://129.151.116.109:1010/api/Admin/update',
         
         type: 'PUT',
         contentType:'application/json',
@@ -52,7 +51,7 @@ function eliminarAdmin(idElemento){
         data : dataToSend,
         
        
-        url : "http://localhost:1010/api/Admin/"+idElemento,
+        url : "http://129.151.116.109:1010/api/Admin/"+idElemento,
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -71,7 +70,7 @@ function eliminarAdmin(idElemento){
 
 function cargarAdmin(idItem){
     $.ajax({    
-        url : "http://localhost:1010/api/Admin/"+idItem,
+        url : "http://129.151.116.109:1010/api/Admin/"+idItem,
         type : 'GET',
         dataType : 'JSON',        
 
@@ -96,7 +95,7 @@ function cargarAdmin(idItem){
 
 function consultarAdmin(){
     $.ajax({
-        url:"http://localhost:1010/api/Admin/all",
+        url:"http://129.151.116.109:1010/api/Admin/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -139,7 +138,7 @@ function guardarAdmin(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
-        url:"http://localhost:1010/api/Admin/save",
+        url:"http://129.151.116.109:1010/api/Admin/save",
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -164,3 +163,5 @@ function limpiarFormulario(){
 $(document).ready(function(){
     consultarAdmin();
 });
+
+

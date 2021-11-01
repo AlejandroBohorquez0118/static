@@ -1,6 +1,5 @@
 var idCarga; // Guarda el Id del elemento cuando se da click en el botón cargar
 
-
 function editarMessage(){
 
     var elemento={
@@ -17,7 +16,7 @@ function editarMessage(){
        
         data: dataToSend,
         
-        url: 'http://localhost:1010/api/Message/update',
+        url: 'http://129.151.116.109:1010/api/Message/update',
         
         type: 'PUT',
         contentType:'application/json',
@@ -52,7 +51,7 @@ function eliminarMessage(idElemento){
         data : dataToSend,
         
        
-        url : "http://localhost:1010/api/Message/"+idElemento,
+        url : "http://129.151.116.109:1010/api/Message/"+idElemento,
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -71,7 +70,7 @@ function eliminarMessage(idElemento){
 
 function cargarMessage(idItem){
     $.ajax({    
-        url : "http://localhost:1010/api/Message/"+idItem,
+        url : "http://129.151.116.109:1010/api/Message/"+idItem,
         type : 'GET',
         dataType : 'JSON',        
 
@@ -92,7 +91,7 @@ function cargarMessage(idItem){
 
 function consultarMessage(){
     $.ajax({
-        url:"http://localhost:1010/api/Message/all",
+        url:"http://129.151.116.109:1010/api/Message/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -123,28 +122,6 @@ function pintarRespuestaMessage(respuesta){
     myTable+=`</div></div>`;
     $("#resultadosMessage").html(myTable);    
     
-    /**let myTable="<table border='1'>";
-
-    myTable+="<thead>";
-    myTable+="<TR>";
-    myTable+="<th>"+"Doctor"+"</th>";
-    myTable+="<th>"+"Cliente"+"</th>";
-    myTable+="<th>"+"Mensaje"+"</th>";
-
-    myTable+="</TR>";
-    myTable+="</thead>";
-
-    for(i=0; i<respuesta.length; i++) {
-        myTable+="<tr>";
-        myTable+="<td>"+respuesta[i].doctor.name+"</td>";
-        myTable+="<td>"+respuesta[i].client.name+"</td>";
-        myTable+="<td>"+respuesta[i].messageText+"</td>";
-        myTable+="<td><button onclick='eliminar("+respuesta[i].idMessage+")'>Borrar</button></td>";
-        myTable+="<td><button onclick='cargar("+respuesta[i].idMessage+")'>Cargar</button></td>";
-        myTable+="</tr>";
-    }
-    myTable+="</table>";
-    $("#resultados").html(myTable);*/
 }
 
 function guardarMessage(){
@@ -158,7 +135,7 @@ function guardarMessage(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
-        url:"http://localhost:1010/api/Message/save",
+        url:"http://129.151.116.109:1010/api/Message/save",
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -194,7 +171,7 @@ function consultarDatosMessage(){
 
 function consultarDoctorMessage(){
     $.ajax({
-        url:"http://localhost:1010/api/Doctor/all",
+        url:"http://129.151.116.109:1010/api/Doctor/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -229,7 +206,7 @@ function consultarDoctorMessage(){
 
 function consultarClienteMessage(){
     $.ajax({
-        url:"http://localhost:1010/api/Client/all",
+        url:"http://129.151.116.109:1010/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -263,3 +240,5 @@ $(document).ready(function(){
     consultarDoctorMessage();
     consultarClienteMessage();
 });
+
+
