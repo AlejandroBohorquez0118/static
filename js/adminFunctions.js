@@ -16,7 +16,11 @@ function editarAdmin(){
        
         data: dataToSend,
         
+<<<<<<< HEAD
         url: 'http://129.151.116.109:7070/api/Admin/update',
+=======
+        url: 'http://129.151.116.109:1010/api/Admin/update',
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         
         type: 'PUT',
         contentType:'application/json',
@@ -51,7 +55,11 @@ function eliminarAdmin(idElemento){
         data : dataToSend,
         
        
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Admin/"+idElemento,
+=======
+        url : "http://129.151.116.109:1010/api/Admin/"+idElemento,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -70,7 +78,11 @@ function eliminarAdmin(idElemento){
 
 function cargarAdmin(idItem){
     $.ajax({    
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Admin/"+idItem,
+=======
+        url : "http://129.151.116.109:1010/api/Admin/"+idItem,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type : 'GET',
         dataType : 'JSON',        
 
@@ -95,7 +107,11 @@ function cargarAdmin(idItem){
 
 function consultarAdmin(){
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Admin/all",
+=======
+        url:"http://129.151.116.109:1010/api/Admin/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -138,7 +154,11 @@ function guardarAdmin(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Admin/save",
+=======
+        url:"http://129.151.116.109:1010/api/Admin/save",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -165,4 +185,7 @@ $(document).ready(function(){
 });
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079

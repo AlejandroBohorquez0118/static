@@ -20,7 +20,11 @@ function editarClient(){
        
         data: dataToSend,
         
+<<<<<<< HEAD
         url: 'http://129.151.116.109:7070/api/Client/update',
+=======
+        url: 'http://129.151.116.109:1010/api/Client/update',
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         
         type: 'PUT',
         contentType:'application/json',
@@ -55,7 +59,11 @@ function eliminarClient(idElemento){
         data : dataToSend,
         
        
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Client/"+idElemento,
+=======
+        url : "http://129.151.116.109:1010/api/Client/"+idElemento,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -73,9 +81,16 @@ function eliminarClient(idElemento){
 }
 
 
+<<<<<<< HEAD
 function cargarClient(idItem){
     $.ajax({    
         url : "http://129.151.116.109:7070/api/Client/"+idItem,
+=======
+
+function cargarClient(idItem){
+    $.ajax({    
+        url : "http://129.151.116.109:1010/api/Client/"+idItem,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type : 'GET',
         dataType : 'JSON',        
 
@@ -100,7 +115,11 @@ function cargarClient(idItem){
 
 function consultarClient(){
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Client/all",
+=======
+        url:"http://129.151.116.109:1010/api/Client/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -144,7 +163,11 @@ function guardarClient(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Client/save",
+=======
+        url:"http://129.151.116.109:1010/api/Client/save",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -170,4 +193,7 @@ $(document).ready(function(){
     consultarClient();
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079

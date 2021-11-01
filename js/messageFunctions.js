@@ -1,6 +1,9 @@
 
+<<<<<<< HEAD
 var idCarga; // Guarda el Id del elemento cuando se da click en el botón cargar
 
+=======
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
 function editarMessage(){
 
     var elemento={
@@ -17,7 +20,11 @@ function editarMessage(){
        
         data: dataToSend,
         
+<<<<<<< HEAD
         url: 'http://129.151.116.109:7070/api/Message/update',
+=======
+        url: 'http://129.151.116.109:1010/api/Message/update',
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         
         type: 'PUT',
         contentType:'application/json',
@@ -52,7 +59,11 @@ function eliminarMessage(idElemento){
         data : dataToSend,
         
        
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Message/"+idElemento,
+=======
+        url : "http://129.151.116.109:1010/api/Message/"+idElemento,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -71,7 +82,11 @@ function eliminarMessage(idElemento){
 
 function cargarMessage(idItem){
     $.ajax({    
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Message/"+idItem,
+=======
+        url : "http://129.151.116.109:1010/api/Message/"+idItem,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type : 'GET',
         dataType : 'JSON',        
 
@@ -92,7 +107,11 @@ function cargarMessage(idItem){
 
 function consultarMessage(){
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Message/all",
+=======
+        url:"http://129.151.116.109:1010/api/Message/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -136,7 +155,11 @@ function guardarMessage(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Message/save",
+=======
+        url:"http://129.151.116.109:1010/api/Message/save",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -172,7 +195,11 @@ function consultarDatosMessage(){
 
 function consultarDoctorMessage(){
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Doctor/all",
+=======
+        url:"http://129.151.116.109:1010/api/Doctor/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -207,7 +234,11 @@ function consultarDoctorMessage(){
 
 function consultarClienteMessage(){
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Client/all",
+=======
+        url:"http://129.151.116.109:1010/api/Client/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -243,5 +274,8 @@ $(document).ready(function(){
 });
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079

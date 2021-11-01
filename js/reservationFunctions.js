@@ -24,7 +24,11 @@ function editarReservation(){
        
         data: dataToSend,
         
+<<<<<<< HEAD
         url: 'http://129.151.116.109:7070/api/Reservation/update',
+=======
+        url: 'http://129.151.116.109:1010/api/Reservation/update',
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         
         type: 'PUT',
         contentType:'application/json',
@@ -64,7 +68,11 @@ function editarScore(){
        
         data: dataToSend,
         
+<<<<<<< HEAD
         url: 'http://129.151.116.109:7070/api/Score/update',
+=======
+        url: 'http://129.151.116.109:1010/api/Score/update',
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         
         type: 'PUT',
         contentType:'application/json',
@@ -93,7 +101,11 @@ function conseguirScore(idElemento){
     
       
       $.ajax({    
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Reservation/"+idElemento,
+=======
+        url : "http://129.151.116.109:1010/api/Reservation/"+idElemento,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type : 'GET',
         dataType : 'JSON',        
 
@@ -121,7 +133,11 @@ function conseguirScore(idElemento){
         data : dataToSend,
         
         
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Reservation/"+idElemento,
+=======
+        url : "http://129.151.116.109:1010/api/Reservation/"+idElemento,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -153,7 +169,11 @@ function eliminarScore(){
        
         data : dataToSend,
         
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Score/"+window.idScoreE,
+=======
+        url : "http://129.151.116.109:1010/api/Score/"+window.idScoreE,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -172,7 +192,11 @@ function eliminarScore(){
 
 function CargarReservation(idItem){
     $.ajax({    
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Reservation/"+idItem,
+=======
+        url : "http://129.151.116.109:1010/api/Reservation/"+idItem,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type : 'GET',
         dataType : 'JSON',        
 
@@ -209,7 +233,11 @@ function CargarReservation(idItem){
 
 function cargarScore(idItem){
     $.ajax({    
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Reservation/"+idItem,
+=======
+        url : "http://129.151.116.109:1010/api/Reservation/"+idItem,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type : 'GET',
         dataType : 'JSON',        
 
@@ -234,7 +262,11 @@ function cargarScore(idItem){
 
 function consultarReservation(){
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Reservation/all",
+=======
+        url:"http://129.151.116.109:1010/api/Reservation/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -301,7 +333,11 @@ function guardarReservation(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2), 
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Reservation/save",
+=======
+        url:"http://129.151.116.109:1010/api/Reservation/save",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -336,7 +372,11 @@ $(document).ready(function(){
  function consultarDoctorR(){
      console.log("consulta doctorR")
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Doctor/all",
+=======
+        url:"http://129.151.116.109:1010/api/Doctor/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -372,7 +412,11 @@ function consultarClienteR(){
 
     console.log("1")
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Client/all",
+=======
+        url:"http://129.151.116.109:1010/api/Client/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -404,7 +448,11 @@ myOption+="</select>";
 
      function Calificar(idItem){
         $.ajax({    
+<<<<<<< HEAD
             url : "http://129.151.116.109:7070/api/Reservation/"+idItem,
+=======
+            url : "http://129.151.116.109:1010/api/Reservation/"+idItem,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
             type : 'GET',
             dataType : 'JSON',        
     
@@ -442,7 +490,11 @@ myOption+="</select>";
             contentType:"application/json; charset=utf-8",
             dataType: 'JSON',
             data: JSON.stringify(var2),
+<<<<<<< HEAD
             url:"http://129.151.116.109:7070/api/Score/save",
+=======
+            url:"http://129.151.116.109:1010/api/Score/save",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
             success:function(respose) {
                 console.log("Se guardó correctamente");
                 var scoreInput = document.getElementById('scoreReservation');
@@ -472,5 +524,8 @@ myOption+="</select>";
         window.Action=ActionSelect; 
      }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079

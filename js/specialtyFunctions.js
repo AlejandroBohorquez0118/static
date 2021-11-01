@@ -15,7 +15,11 @@ function editar(){
        
         data: dataToSend,
         
+<<<<<<< HEAD
         url: 'http://129.151.116.109:7070/api/Specialty/update',
+=======
+        url: 'http://129.151.116.109:1010/api/Specialty/update',
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         
         type: 'PUT',
         contentType:'application/json',
@@ -50,7 +54,11 @@ function eliminar(idElemento){
         data : dataToSend,
         
        
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Specialty/"+idElemento,
+=======
+        url : "http://129.151.116.109:1010/api/Specialty/"+idElemento,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -69,7 +77,11 @@ function eliminar(idElemento){
 
 function cargar(idItem){
     $.ajax({    
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Specialty/"+idItem,
+=======
+        url : "http://129.151.116.109:1010/api/Specialty/"+idItem,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type : 'GET',
         dataType : 'json',        
         
@@ -90,7 +102,11 @@ function cargar(idItem){
 
 function consultar(){
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Specialty/all",
+=======
+        url:"http://129.151.116.109:1010/api/Specialty/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -132,7 +148,11 @@ function guardar(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Specialty/save",
+=======
+        url:"http://129.151.116.109:1010/api/Specialty/save",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -159,5 +179,8 @@ $(document).ready(function(){
 });
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079

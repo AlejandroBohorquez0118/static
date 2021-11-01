@@ -18,7 +18,11 @@ function editarDoctor(){
        
         data: dataToSend,
         
+<<<<<<< HEAD
         url: 'http://129.151.116.109:7070/api/Doctor/update',
+=======
+        url: 'http://129.151.116.109:1010/api/Doctor/update',
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         
         type: 'PUT',
         contentType:'application/json',
@@ -53,7 +57,11 @@ function eliminarDoctor(idElemento){
         data : dataToSend,
         
        
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Doctor/"+idElemento,
+=======
+        url : "http://129.151.116.109:1010/api/Doctor/"+idElemento,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -72,7 +80,11 @@ function eliminarDoctor(idElemento){
 
 function cargarDoctor(idItem){
     $.ajax({    
+<<<<<<< HEAD
         url : "http://129.151.116.109:7070/api/Doctor/"+idItem,
+=======
+        url : "http://129.151.116.109:1010/api/Doctor/"+idItem,
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type : 'GET',
         dataType : 'JSON',        
 
@@ -94,7 +106,11 @@ function cargarDoctor(idItem){
 
 function consultarDoctorI(){
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Doctor/all",
+=======
+        url:"http://129.151.116.109:1010/api/Doctor/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -143,7 +159,11 @@ function guardarDoctor(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Doctor/save",
+=======
+        url:"http://129.151.116.109:1010/api/Doctor/save",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -175,7 +195,11 @@ $(document).ready(function(){
 
 function consultarDoctorIC(){
     $.ajax({
+<<<<<<< HEAD
         url:"http://129.151.116.109:7070/api/Specialty/all",
+=======
+        url:"http://129.151.116.109:1010/api/Specialty/all",
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -203,4 +227,7 @@ function consultarDoctorIC(){
      }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ad31b26fac3adecf0fc3cb23c4b0258ea7407079
