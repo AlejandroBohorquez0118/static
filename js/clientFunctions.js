@@ -1,6 +1,5 @@
 var idCarga; // Guarda el Id del elemento cuando se da click en el botón cargar
 
-
 function editarClient(){
 
     var elemento={
@@ -21,7 +20,7 @@ function editarClient(){
        
         data: dataToSend,
         
-        url: 'http://localhost:1010/api/Client/update',
+        url: 'http://129.151.116.109:7070/api/Client/update',
         
         type: 'PUT',
         contentType:'application/json',
@@ -56,7 +55,7 @@ function eliminarClient(idElemento){
         data : dataToSend,
         
        
-        url : "http://localhost:1010/api/Client/"+idElemento,
+        url : "http://129.151.116.109:7070/api/Client/"+idElemento,
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -74,11 +73,9 @@ function eliminarClient(idElemento){
 }
 
 
-
-
 function cargarClient(idItem){
     $.ajax({    
-        url : "http://localhost:1010/api/Client/"+idItem,
+        url : "http://129.151.116.109:7070/api/Client/"+idItem,
         type : 'GET',
         dataType : 'JSON',        
 
@@ -103,7 +100,7 @@ function cargarClient(idItem){
 
 function consultarClient(){
     $.ajax({
-        url:"http://localhost:1010/api/Client/all",
+        url:"http://129.151.116.109:7070/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -117,7 +114,7 @@ function pintarRespuestaClient(respuesta){
     let myTable=`<div class="container" style="width: 100%;"><div class="row">`;
     for(i=0; i<respuesta.length; i++) {
         myTable+=`
-            <div class="card m-2" style="width: 20rem;">
+            <div class="card m-2" style="width: 20rem;" id="Card">
                 <div class="card-body">
                     <h5 class="card-title">${respuesta[i].name}</h5>
                     <a href="${respuesta[i].email}" class="card-link">${respuesta[i].email}</a>
@@ -147,7 +144,7 @@ function guardarClient(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
-        url:"http://localhost:1010/api/Client/save",
+        url:"http://129.151.116.109:7070/api/Client/save",
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -172,3 +169,5 @@ function limpiarFormularioClient(){
 $(document).ready(function(){
     consultarClient();
 });
+
+

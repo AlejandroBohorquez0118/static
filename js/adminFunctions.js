@@ -1,6 +1,5 @@
 var idCarga; // Guarda el Id del elemento cuando se da click en el botón cargar
 
-
 function editarAdmin(){
 
     var elemento={
@@ -17,7 +16,7 @@ function editarAdmin(){
        
         data: dataToSend,
         
-        url: 'http://localhost:1010/api/Admin/update',
+        url: 'http://129.151.116.109:7070/api/Admin/update',
         
         type: 'PUT',
         contentType:'application/json',
@@ -52,7 +51,7 @@ function eliminarAdmin(idElemento){
         data : dataToSend,
         
        
-        url : "http://localhost:1010/api/Admin/"+idElemento,
+        url : "http://129.151.116.109:7070/api/Admin/"+idElemento,
         type: 'DELETE',
         contentType:'application/json',
         success : function(json, textStatus, xhr) {
@@ -71,7 +70,7 @@ function eliminarAdmin(idElemento){
 
 function cargarAdmin(idItem){
     $.ajax({    
-        url : "http://localhost:1010/api/Admin/"+idItem,
+        url : "http://129.151.116.109:7070/api/Admin/"+idItem,
         type : 'GET',
         dataType : 'JSON',        
 
@@ -96,7 +95,7 @@ function cargarAdmin(idItem){
 
 function consultarAdmin(){
     $.ajax({
-        url:"http://localhost:1010/api/Admin/all",
+        url:"http://129.151.116.109:7070/api/Admin/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -110,7 +109,7 @@ function pintarRespuestaAdmin(respuesta){
     let myTable=`<div class="container" style="width: 100%;"><div class="row" >`;
     for(i=0; i<respuesta.length; i++) {
         myTable+=`
-            <div class="card m-2" style="width: 20rem;">
+            <div class="card m-2" style="width: 20rem;" id="Card">
                 <div class="card-body">
                     <h5 class="card-title">${respuesta[i].name}</h5>
                     <a href="${respuesta[i].email}" class="card-link">${respuesta[i].email}</a>
@@ -125,27 +124,7 @@ function pintarRespuestaAdmin(respuesta){
     }
     myTable+=`</div></div></div>`;
     $("#resultadosAdmin").html(myTable);
-    
-    /**let myTable="<table border='1'>";
-
-    myTable+="<thead>";
-    myTable+="<TR>";
-    myTable+="<th>"+"Nombre"+"</th>";
-    myTable+="<th>"+"Email"+"</th>";
-    myTable+="<th>"+"Contraseña"+"</th>";
-    myTable+="</TR>";
-    myTable+="</thead>";
-    for(i=0; i<respuesta.length; i++) {
-        myTable+="<tr>";
-        myTable+="<td>"+respuesta[i].name+"</td>";
-        myTable+="<td>"+respuesta[i].email+"</td>";
-        myTable+="<td>"+respuesta[i].password+"</td>";
-        myTable+="<td><button onclick='eliminar("+respuesta[i].idAdmin+")'>Borrar</button></td>";
-        myTable+="<td><button onclick='cargar("+respuesta[i].idAdmin+")'>Cargar</button></td>";
-        myTable+="</tr>";
-    }
-    myTable+="</table>";
-    $("#resultados").html(myTable);**/
+  
 }
 
 function guardarAdmin(){
@@ -159,7 +138,7 @@ function guardarAdmin(){
         contentType:"application/json; charset=utf-8",
         dataType: 'JSON',
         data: JSON.stringify(var2),
-        url:"http://localhost:1010/api/Admin/save",
+        url:"http://129.151.116.109:7070/api/Admin/save",
         success:function(respose) {
             console.log("Se guardó correctamente");
             //alert("Se guardó correctametne..");
@@ -184,3 +163,6 @@ function limpiarFormulario(){
 $(document).ready(function(){
     consultarAdmin();
 });
+
+
+
